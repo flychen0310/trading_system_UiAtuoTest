@@ -1,0 +1,7 @@
+#! C:\Users\AdiminiChen\AppData\Local\Programs\Python\Python310
+# coding=utf-8
+# @Time: 2023/2/25 20:26
+# @Author: jackchen
+import os
+
+BASE_DIR = os.path.dirname(__file__)
