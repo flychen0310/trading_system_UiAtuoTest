@@ -6,15 +6,22 @@ import yaml
 from common.tools import get_project_path, sep
 
 
-def get_yam():
-    """
-    获取yaml文件内容
-    :return:
-    """
-    with open(get_project_path() + sep(["config", "environment.yaml"], add_sep_before=True), 'r', encoding='utf-8') as f:
-        yaml_file = yaml.load(f, Loader=yaml.FullLoader)
-        return yaml_file['username'], yaml_file['password']
+class GetConfig:
+    def __init__(self):
+        """
+        获取yaml文件内容
+        :return:
+        """
+        with open(get_project_path() + sep(["config", "environment.yaml"], add_sep_before=True), 'r',
+                  encoding='utf-8') as f:
+            self.yaml_file = yaml.load(f, Loader=yaml.FullLoader)
+
+    def get_username_pwd(self):
+        return self.yaml_file['username'], self.yaml_file['password']
+
+    def get_url(self):
+        return self.yaml_file["url"]
 
 
 if __name__ == '__main__':
-    print(get_yam())
+    print(GetConfig().get_url())
