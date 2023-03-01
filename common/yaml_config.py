@@ -16,12 +16,14 @@ class GetConfig:
                   encoding='utf-8') as f:
             self.yaml_file = yaml.load(f, Loader=yaml.FullLoader)
 
-    def get_username_pwd(self):
-        return self.yaml_file['username'], self.yaml_file['password']
+    def get_username_pwd(self, user):
+        # return self.yaml_file['username'], self.yaml_file['password']
+        return self.yaml_file["user"][user]['username'],self.yaml_file["user"][user]['password']
 
     def get_url(self):
         return self.yaml_file["url"]
 
 
 if __name__ == '__main__':
-    print(GetConfig().get_url())
+    # print(GetConfig().get_url())
+    print(GetConfig().get_username_pwd('william'))

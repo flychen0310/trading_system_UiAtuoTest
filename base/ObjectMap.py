@@ -59,11 +59,11 @@ class ObjectMap:
         # 开始时间
         start_ms = time.time() * 1000
         # 结束时间
-        stop_ms = start_ms + timeout * 1000
+        stop_ms = start_ms + (timeout * 1000)
         for x in range(int(timeout * 10)):
             try:
                 # 获取页面的状态
-                ready_state = driver.execute_script("document.readyState")
+                ready_state = driver.execute_script("return document.readyState")
             except WebDriverException:
                 # driver执行失败 直接跳过
                 time.sleep(0.03)
