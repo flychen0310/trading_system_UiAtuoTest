@@ -3,6 +3,7 @@
 # @Time: 2023/2/27 13:27
 # @Author: jackchen
 class HomeBase:
+    """首页定位方法"""
 
     def wallet_switch(self):
         """

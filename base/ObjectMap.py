@@ -10,7 +10,7 @@ from common.yaml_config import GetConfig
 
 
 class ObjectMap:
-    # 获取产品地址
+    # 获取url地址
     url = GetConfig().get_url()
 
     def element_get(self, driver, locate_type, locator_expression, timeout=10, must_visible=False):
@@ -282,5 +282,15 @@ class ObjectMap:
         except Exception as e:
             print("页面元素消失或出现异常", e)
             return False
-
         return True
+
+    def upload(self, driver, locate_type, locator_expression, file_path):
+        """
+        文件上传
+        :param file_path:
+        :param driver:
+        :param locate_type:
+        :param locator_expression:
+        """
+        el = self.element_get(driver, locate_type, locator_expression)
+        return el.send_keys(file_path)

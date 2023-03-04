@@ -3,6 +3,7 @@
 # @Time: 2023/2/27 9:33
 # @Author: jackchen
 class LoginBase:
+    """登录页定位方法"""
 
     def login_input(self, placeholder):
         """

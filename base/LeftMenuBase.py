@@ -3,6 +3,7 @@
 # @Time: 2023/2/27 14:03
 # @Author: jackchen
 class LeftMenuBase:
+    """左侧菜单栏定位方法"""
 
     def level_one_menu(self, menu_name):
         """
@@ -20,4 +21,4 @@ class LeftMenuBase:
 
 
 if __name__ == '__main__':
-    print(LeftMenuBase().level_two_menu('hhh'))
+    print(LeftMenuBase().level_one_menu('hhh'))
