@@ -112,7 +112,7 @@ class GoodsPage(GoodsBase, ObjectMap):
         time.sleep(1)
         for goods_pic in goods_pic_list:
             self.upload_goods_img(driver, goods_pic)
-            time.sleep(5)
+            time.sleep(3)
         time.sleep(1)
         self.goods_prices(driver, goods_price)
         time.sleep(1)

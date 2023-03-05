@@ -294,3 +294,14 @@ class ObjectMap:
         """
         el = self.element_get(driver, locate_type, locator_expression)
         return el.send_keys(file_path)
+
+    def switch_window_to_handle(self, driver):
+        """
+        窗口的切换
+        :param driver:
+        """
+        # 获取窗口权柄
+        window_handle = driver.window_handles
+        # 传入最后一个窗口的权柄
+        driver.switch_to.window(window_handle[-1])
+
