@@ -10,8 +10,8 @@ from config.driver_config import DriverConfig
 
 class TestLogin:
 
-    def test_login(self):
-        driver = DriverConfig().driver_config()
+    def test_login(self, driver):
+        # driver = DriverConfig().driver_config()
         LoginPage().login(driver, 'william')
         time.sleep(3)
-        driver.close()
+        # driver.close()

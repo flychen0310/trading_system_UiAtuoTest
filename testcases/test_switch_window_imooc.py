@@ -12,8 +12,8 @@ from page.LoginPage import LoginPage
 
 class TestSwitchWindowHandle:
 
-    def test_switch_window_2_imooc(self):
-        driver = DriverConfig().driver_config()
+    def test_switch_window_2_imooc(self, driver):
+        # driver = DriverConfig().driver_config()
         LoginPage().login(driver, 'jay')
         time.sleep(2)
         LeftMenuPage().click_level_one_menu(driver, '外链')
@@ -21,4 +21,4 @@ class TestSwitchWindowHandle:
         title = ExternalLinkPage().go_2_mooc(driver)
         print(title)
         time.sleep(2)
-        driver.close()
+        # driver.close()

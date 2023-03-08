@@ -41,7 +41,6 @@ class ObjectMap:
                         return el
                     else:
                         raise Exception()
-
             except Exception:
                 now_ms = time.time() * 1000
                 # 如果超时直接跳出整个循环
@@ -305,3 +304,21 @@ class ObjectMap:
         # 传入最后一个窗口的权柄
         driver.switch_to.window(window_handle[-1])
 
+    def switch_into_iframe(self, drive, locate_iframe_type, locator_iframe_expression):
+        """
+        iframe切换
+        :param drive:
+        :param locate_iframe_type:
+        :param locator_iframe_expression:
+        :return:
+        """
+        iframe = self.element_get(drive, locate_iframe_type, locator_iframe_expression)
+        drive.switch_to.frame(iframe)
+
+    def switch_from_iframe_to_content(self, driver):
+        """
+        从iframe切换到主页面
+        :param driver:
+        :return:
+        """
+        driver.switch_to.parent_frame()
