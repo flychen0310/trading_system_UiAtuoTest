@@ -31,6 +31,15 @@ class LoginPage(LoginBase, ObjectMap):
         # return driver.find_element_by_xpath(button_xpath).click()
         return self.element_click(driver, By.XPATH, button_xpath)
 
+    def assert_login_success(self, driver):
+        """
+        断言登录成功
+        :param driver:
+        :return:
+        """
+        s_xpath = self.login_success()
+        self.element_appear(driver, By.XPATH, s_xpath, timeout=2)
+
     def login(self, driver, user):
         """
         登录
@@ -42,6 +51,7 @@ class LoginPage(LoginBase, ObjectMap):
         self.login_input_value(driver, '用户名', username)
         self.login_input_value(driver, '密码', password)
         self.login_click(driver, '登录')
+        self.assert_login_success(driver)
 
     def login_assert(self, driver, img_name):
         """

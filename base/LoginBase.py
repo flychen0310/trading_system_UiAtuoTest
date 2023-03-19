@@ -20,6 +20,9 @@ class LoginBase:
         """
         return "//span[text()='{}']/parent::button".format(button_name)
 
+    def login_success(self):
+        return "//p[text()='登录成功']"
+
 
 if __name__ == '__main__':
     print(LoginBase().login_button('test'))
