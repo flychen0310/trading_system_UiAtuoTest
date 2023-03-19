@@ -3,7 +3,17 @@
 # @Time: 2023/2/26 10:00
 # @Author: jackchen
 import os
-from selenium import webdriver
+# import datetime
+#
+# from selenium import webdriver
+#
+#
+# def get_now_time():
+#     return datetime.datetime.now()
+#
+#
+# def get_now_date_time_str():
+#     return datetime.datetime.now().strftime("%Y%m%d%H%M%S")
 
 
 def get_project_path():
@@ -16,7 +26,7 @@ def get_project_path():
 
 def sep(path, add_sep_before=False, add_sep_after=False):
     """
-    :param path: 传入元组路径
+    :param path: 传入路径+文件名称 ["test","config.py"]
     :param add_sep_before: 前面+分割符
     :param add_sep_after: 后面 + 分割符
     :return:

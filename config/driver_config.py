@@ -4,10 +4,8 @@
 # @Author: jackchen
 
 
-import time
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from common.tools import get_project_path, sep
 
 
 class DriverConfig:

@@ -18,7 +18,6 @@ class LoginPage(LoginBase, ObjectMap):
         :param input_val:
         """
         input_xpath = self.login_input(input_placeholder)
-        # return driver.find_element_by_xpath(input_xpath).send_keys(input_val)
         return self.element_fill_value(driver, By.XPATH, input_xpath, input_val)
 
     def login_click(self, driver, button_name):
@@ -43,3 +42,12 @@ class LoginPage(LoginBase, ObjectMap):
         self.login_input_value(driver, '用户名', username)
         self.login_input_value(driver, '密码', password)
         self.login_click(driver, '登录')
+
+    def login_assert(self, driver, img_name):
+        """
+        登录后判断头像
+        :param driver:
+        :param img_name:
+        :return:
+        """
+        return self.find_img_in_source(driver, img_name)

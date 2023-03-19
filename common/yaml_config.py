@@ -20,6 +20,7 @@ class GetConfig:
         # return self.yaml_file['username'], self.yaml_file['password']
         return self.yaml_file["user"][user]['username'],self.yaml_file["user"][user]['password']
 
+
     def get_url(self):
         return self.yaml_file["url"]
 

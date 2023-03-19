@@ -6,6 +6,10 @@ import time
 from selenium.common.exceptions import ElementNotVisibleException, WebDriverException, NoSuchElementException, \
     StaleElementReferenceException
 from selenium.webdriver.common.keys import Keys
+
+from common.find_img import FindImg
+# from common.report_add_img import add_img_path_2_report
+from common.tools import get_project_path, sep
 from common.yaml_config import GetConfig
 
 
@@ -322,3 +326,25 @@ class ObjectMap:
         :return:
         """
         driver.switch_to.parent_frame()
+
+    def find_img_in_source(self, driver, img_name):
+        """
+        截图并在截图中查找图片
+        :param driver:
+        :param img_name:
+        :return:
+        """
+        # 截图后图片保存的路径
+        source_img_path = get_project_path() + sep(["img", "source_img", img_name], add_sep_before=True)
+        print("source_img_path:", source_img_path)
+        # 需要查找的图片的路径
+        search_img_path = get_project_path() + sep(["img", "assert_img", img_name], add_sep_before=True)
+        print("search_img_path:", search_img_path)
+        # 截图并保存图片
+        driver.get_screenshot_as_file(source_img_path)
+        time.sleep(3)
+        # add_img_path_2_report(source_img_path, "原图")
+        # add_img_path_2_report(search_img_path, "需要查找的图")
+        # 在原图中查找是否有指定的图片，返回信心值
+        confidence = FindImg().get_confidence(source_img_path, search_img_path)
+        return confidence

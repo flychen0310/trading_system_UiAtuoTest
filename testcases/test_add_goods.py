@@ -25,7 +25,7 @@ goods_info_list = [
     {"goods_title": "商品1",
      "goods_details": "商品1的描述",
      "goods_num": 5,
-     "goods_pic_list": ["pic1.img"],
+     "goods_pic_list": ["goods_one.png"],
      "goods_price": 233,
      "goods_status": "上架",
      "button": "提交"
@@ -33,7 +33,7 @@ goods_info_list = [
     {"goods_title": "商品2",
      "goods_details": "商品2的描述",
      "goods_num": 3,
-     "goods_pic_list": ["pic2.img"],
+     "goods_pic_list": ["goods_one.png"],
      "goods_price": 2330,
      "goods_status": "上架",
      "button": "提交"
@@ -53,9 +53,9 @@ class TestAddGoods:
         # get_driver = DriverConfig().driver_config()
         LoginPage().login(driver, "jay")
         LeftMenuPage().click_level_one_menu(driver, '产品')
-        time.sleep(1)
+        time.sleep(0.5)
         LeftMenuPage().click_level_two_menu(driver, '新增二手商品')
-        time.sleep(2)
+        time.sleep(0.5)
         GoodsPage().add_goods_process(driver, goods_info["goods_title"], goods_info["goods_details"],
                                       goods_info["goods_num"],
                                       goods_info["goods_pic_list"], goods_info["goods_price"],

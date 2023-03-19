@@ -11,6 +11,7 @@ class LeftMenuBase:
         """
         return "//aside[@class='el-aside']//span[text()='{}']/ancestor::li".format(menu_name)
 
+
     def level_two_menu(self, menu_name):
         """
         二级菜单

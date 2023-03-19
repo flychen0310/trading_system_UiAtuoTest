@@ -24,6 +24,7 @@ class LeftMenuPage(LeftMenuBase, ObjectMap):
         点击二级菜单
         :param driver:
         :param menu_name:
+
         """
         menu_xpath = self.level_two_menu(menu_name)
         return self.element_click(driver, By.XPATH, menu_xpath)
