@@ -13,7 +13,7 @@ def add_img_2_report(driver, step_name, need_sleep=True):
     截图并插入allure报告
     :param driver:
     :param step_name:
-    :param need_sleep:
+    :param need_sleep:是否需要休眠
     :return:
     """
     if need_sleep:
@@ -27,7 +27,7 @@ def add_img_2_report(driver, step_name, need_sleep=True):
 
 def add_img_path_2_report(img_path, step_name):
     """
-    将图片插入Allure报告
+    将指定路径下的图片插入Allure报告
     :param img_path:图片路径
     :param step_name:步骤名称
     :return:

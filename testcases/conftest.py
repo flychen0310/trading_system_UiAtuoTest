@@ -10,7 +10,7 @@ from common.report_add_img import add_img_2_report
 
 @pytest.fixture()
 def driver():
-    global get_driver
+    global get_driver  # 设置全局变量，用于钩子函数
     get_driver = DriverConfig().driver_config()
     yield get_driver
     get_driver.quit()
@@ -29,4 +29,3 @@ def pytest_runtest_makereport(item, call):
         if report.failed:
             # 失败就截图
             add_img_2_report(get_driver, "失败截图", need_sleep=False)
-

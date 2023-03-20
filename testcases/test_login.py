@@ -13,9 +13,10 @@ from common.report_add_img import add_img_2_report
 
 
 class TestLogin:
+
     @pytest.mark.login
     @allure.feature("登录")
-    @allure.description("d登录")
+    @allure.description("登录")
     def test_login(self, driver):
         """使用错误账号登录"""
         # driver = DriverConfig().driver_config()
